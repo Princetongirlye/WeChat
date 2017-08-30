@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<!--<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>-->
+
+<view class="container">
+  <!-- top side -->
+ <view class="topItems">
+    <view>
+      <image src="../../images/product/1.jpg"></image>
+    </view>
+    <block wx:for="{{topItems}}">
+      <view class="top-item">
+        <view>
+          <text>{{item.text}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- Left side-->
+  <view class="nav-left">
+    <block wx:for="{{navLeftItems}}">
+      <view class="nav-left-items">
+        {{item.text}}
+      </view>
+    </block>
+  </view>
+
+  <!-- Right Side -->
+  <view class="nav-right">
+    <block wx:for="{{navRightItems}}">
+      <view class="nav-right-items">
+        <view>
+          <image src="../../images/product/1.jpg"></image>
+        </view>
+        <view>
+          <text>{{item.text}}</text>
+        </view>
+      </view>
+    </block>
+
+  </view>
+</view>

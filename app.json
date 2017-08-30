@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/cart/index",
+    "pages/my/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "JoJo's 鲜茶果饮",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#000000",
+    "enableFullDownRefresh":"true"
+  },
+  "tabBar":{
+    "color": "#6e6d6b",
+    "selectedColor":"#f9f027",
+    "borderStyle":"white",
+    "backgroundColor":"292929",
+    "list":[{
+      "pagePath":"pages/index/index",
+      "text":"首页"
+      },
+      {
+      "pagePath":"pages/cart/index",
+      "text":"购物车"
+      },
+      {
+      "pagePath": "pages/my/index",
+      "text": "会员中心"
+      }
+    ]
+  }
+}

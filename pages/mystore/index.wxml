@@ -1,0 +1,15 @@
+<view class="container">
+
+  <image src="{{cartImg}}" class = "cart-images"></image>
+  <view> {{tipWords}} </view>
+  
+ <view>
+ {{id}}
+ </view>
+  <block wx:for="{{topItems}}">
+  <view class="foodlist">
+    <text>{{item.text}}</text> 
+  </view>
+  </block>
+
+</view>

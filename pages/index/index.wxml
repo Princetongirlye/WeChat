@@ -11,40 +11,44 @@
 
 <view class="container">
   <!-- top side -->
- <view class="topItems">
+  <view class="topItems">
     <view>
       <image src="../../images/product/1.jpg"></image>
     </view>
     <block wx:for="{{topItems}}">
-      <view class="top-item">
-        <view>
+        <view class="top-item">
+        <navigator url="../mystore/index?id={{item.id}}">
           <text>{{item.text}}</text>
+          </navigator>
         </view>
-      </view>
+      
     </block>
   </view>
 
   <!-- Left side-->
   <view class="nav-left">
-    <block wx:for="{{navLeftItems}}">
-      <view class="nav-left-items">
-        {{item.text}}
+    <block wx:for="{{navLeftItems}}" wx:key="id">
+      <view class="nav-left-items {{curNav == item.id?'active':''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}">
+        {{item.ProductName}}
       </view>
     </block>
   </view>
 
   <!-- Right Side -->
   <view class="nav-right">
-    <block wx:for="{{navRightItems}}">
+  <!--{{navRightItems[curIndex].list[1].listName}}-->
+  <view wx:if="{{navRightItems[curIndex].list}}">
+    <block wx:for="{{navRightItems[curIndex].list}}">
       <view class="nav-right-items">
         <view>
           <image src="../../images/product/1.jpg"></image>
         </view>
         <view>
-          <text>{{item.text}}</text>
+          <text>{{item.listName}}</text>
         </view>
       </view>
     </block>
+  </view>
 
   </view>
 </view>

@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "ProductName": "柠檬茶系列"
+    },
+    {
+      "id": 2,
+      "ProductName": "水果茶系列"
+    },
+    {
+      "id": 3,
+      "ProductName": "玉米汁系列"
+    },
+    {
+      "id": 4,
+      "ProductName": "奶茶之恋系列"
+    },
+    {
+      "id": 5,
+      "ProductName": "宇治抹茶系列"
+    }
+  ]
+}

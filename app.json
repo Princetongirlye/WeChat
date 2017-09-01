@@ -1,34 +1,44 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/cart/index",
     "pages/my/index",
-    "pages/logs/logs"
+    "pages/mystore/index",
+    "pages/logs/logs",
+    "pages/brand/index",
+    "pages/detail/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "JoJo's 鲜茶果饮",
-    "navigationBarTextStyle":"black",
+    "navigationBarTextStyle": "black",
     "backgroundColor": "#000000",
-    "enableFullDownRefresh":"true"
+    "enableFullDownRefresh": "true"
   },
-  "tabBar":{
+  "tabBar": {
     "color": "#6e6d6b",
-    "selectedColor":"#f9f027",
-    "borderStyle":"white",
-    "backgroundColor":"292929",
-    "list":[{
-      "pagePath":"pages/index/index",
-      "text":"首页"
+    "selectedColor": "#f9f027",
+    "borderStyle": "white",
+    "backgroundColor": "292929",
+    "list": [
+      {
+        "iconPath": "images/footer-icon-01.png",
+        "selectedIconPath": "images/footer-icon-01-active.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
       },
       {
-      "pagePath":"pages/cart/index",
-      "text":"购物车"
+        "iconPath": "images/footer-icon-03.png",
+        "selectedIconPath": "images/footer-icon-03-active.png",
+        "pagePath": "pages/cart/index",
+        "text": "购物车"
       },
       {
-      "pagePath": "pages/my/index",
-      "text": "会员中心"
+        "iconPath": "images/footer-icon-04.png",
+        "selectedIconPath": "images/footer-icon-04-active.png",
+        "pagePath": "pages/my/index",
+        "text": "会员中心"
       }
     ]
   }

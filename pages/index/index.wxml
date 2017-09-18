@@ -16,12 +16,12 @@
       <image src="../../images/product/1.jpg"></image>
     </view>
     <block wx:for="{{topItems}}">
-        <view class="top-item">
-        <navigator url="../mystore/index?id={{item.id}}">
+      <view class="top-item">
+        <navigator url="../about/index?id={{item.id}}">
           <text>{{item.text}}</text>
-          </navigator>
-        </view>
-      
+        </navigator>
+      </view>
+
     </block>
   </view>
 
@@ -36,19 +36,69 @@
 
   <!-- Right Side -->
   <view class="nav-right">
-  <!--{{navRightItems[curIndex].list[1].listName}}-->
-  <view wx:if="{{navRightItems[curIndex].list}}">
-    <block wx:for="{{navRightItems[curIndex].list}}">
-      <view class="nav-right-items">
-        <view>
-          <image src="../../images/product/1.jpg"></image>
+    <!--{{navRightItems[curIndex].list[1].listName}}-->
+    <view wx:if="{{navRightItems[curIndex].list}}">
+      <block wx:for="{{navRightItems[curIndex].list}}">
+        <view class="nav-right-items">
+          <view>
+            <image src="../../images/product/1.jpg"></image>
+          </view>
+          <view>
+            <text>{{item.listName}}</text>
+            <view wx:if="{{cartStatus}}">
+              <text>add 1</text>
+            </view>
+            <view wx:else>
+              <text bindtap="selectOptions" data-index="{{index}}">{{curNav}}自选规格{{index}}</text>
+            </view>
+          </view>
         </view>
-        <view>
-          <text>{{item.listName}}</text>
-        </view>
-      </view>
-    </block>
-  </view>
+      </block>
+    </view>
 
   </view>
+
+  <!-- Modal page -->
+  <view animation="{{animationData}}" wx:if="{{showModalStatus}}" class="ModalMask">
+    <view class="showModal">
+      <!--<modal class="showModal" wx:if="{{showModalStatus}}" no-cancel="true" confirm-text="选好了" bindconfirm="confirmOK">-->
+      <icon type="{{iconType}}" size="{{iconSize}}" color="{{iconColor}}" bindtap="HideModal" />
+      <view>
+        <text>产品: {{navRightItems[curNav-1].list[optionIndex].listName}}</text>
+      </view>
+      <view class="size">
+        <view>\n规格:\n</view>
+        <block wx:for="{{navRightItems[curNav-1].list[optionIndex].size}}">
+          <text class="selectedText{{selectedColor?'active':''}}" data-index="{{index}}" bindtap="clickSize">{{item}}</text>
+        </block>
+      </view>
+      <view class="temper">
+        <view>\n温度:\n</view>
+        <block wx:for="{{navRightItems[curNav-1].list[optionIndex].options}}">
+          <text data-index="{{index}}" bindtap="clickTemper">{{item}}</text>
+        </block>
+      </view>
+      <view> 价格: {{navRightItems[curNav-1].list[optionIndex].price[sizeIndex]}} </view>
+      <button bindtap="confirmOK" class="confirmOK"> 选好了 </button>
+    </view>
+  </view>
+
+  <!-- Cart info -->
+  <view class="cart">
+    <image src="{{cartStatus?'../../images/footer-icon-03-active.png':'../../images/footer-icon-03.png'}}"></image>
+    <view wx:if="{{cartStatus}}">
+      {{navRightItems[curNav-1].list[optionIndex].listName}} {{navRightItems[curNav-1].list[optionIndex].size[sizeIndex]}} {{navRightItems[curNav-1].list[optionIndex].options[temperIndex]}} {{navRightItems[curNav-1].list[optionIndex].price[sizeIndex]}}
+      <view class="stepper">
+        <text bindtap="bindMinus" data-index="{{index}}">-</text>
+        <input value="{{num}}" />
+        <text bindtap="bindPlus" data-index="{{index}}">+</text>
+      </view>
+    </view>
+
+    <view wx:else>
+      <text> 购物车为空 </text>
+    </view>
+
+  </view>
+
 </view>

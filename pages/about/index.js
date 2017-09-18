@@ -20,7 +20,8 @@ Page({
       url: 'https://www.princetongirlye.club/topItems.json?id='+option.id,
       success:function(res){
         that.setData({
-          topItems: res.data.data
+          topItems: res.data.data,
+          id: option.id
         });
       }
      
